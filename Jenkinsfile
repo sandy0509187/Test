@@ -1,6 +1,3 @@
-## pipeline must be top level ####
-##agent where to execute ###
-
 pipeline {
     agent any
     parameters {
@@ -15,7 +12,7 @@ pipeline {
         stage("test") {
             when {
                 expression {
-                    BRANCH_NAME == 'dev' || BRANCH_NAME == 'master' ## condition expression test stage will only execute if branch name is dev or maser ##
+                    BRANCH_NAME == 'dev' || BRANCH_NAME == 'master'
                 }
             }
             steps {
