@@ -16,7 +16,7 @@ pipeline {
         }
         stage ("deploy") {
             input {
-              message "Deploy to stage?"
+              message "Deploy to stage? or abort"
               ok "Deploy"
             }
             steps {
