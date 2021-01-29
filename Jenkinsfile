@@ -20,6 +20,13 @@ pipeline {
             }
         }
         stage ("deploy") {
+            when {
+                branch 'master'
+            }
+            input {
+              message "Deploy to stage?"
+              ok "Deploy"
+            }
             steps {
                 echo 'deploying'
                 echo "deploying version ${params.Version}"
