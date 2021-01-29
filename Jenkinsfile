@@ -10,19 +10,11 @@ pipeline {
             }
         }
         stage("test") {
-            when {
-                expression {
-                    ${env.BRANCH_NAME} == 'dev' || ${env.BRANCH_NAME} == 'master'
-                }
-            }
             steps {
                 echo 'test'
             }
         }
         stage ("deploy") {
-            when {
-                branch 'master'
-            }
             input {
               message "Deploy to stage?"
               ok "Deploy"
