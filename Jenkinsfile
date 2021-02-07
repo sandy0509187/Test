@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent 'cloud'
     parameters {
         choice(name: 'Version' , choices: ['1.1.0', '1.2.0'])
     } 
